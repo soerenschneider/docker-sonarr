@@ -11,4 +11,4 @@ RUN mkdir -p "/sonarr/bin" && \
     rm -rf "/sonarr/bin/Sonarr.Update" && \
     chmod -R u=rwX,go=rX "/sonarr"
 
-CMD ["mono", "/sonarr/bin/Sonarr.exe"]
+CMD ["mono", "/sonarr/bin/Sonarr.exe", "-data=/config"]
