@@ -14,9 +14,6 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        mode: [client, server]
     permissions:
       contents: read
       packages: write
@@ -54,4 +51,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            MODE=${{ matrix.mode }}
+            MODE=nop
